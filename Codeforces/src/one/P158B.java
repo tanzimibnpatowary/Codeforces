@@ -21,21 +21,20 @@ public class P158B {
 		}
 		Arrays.sort(member);
 		for (int i = 0; i < member.length; i++) {
-			if (member[i]==4||member[i]==3) {
+			sum = sum + member[i];
+			if (sum==4) {
 				car++;
+				sum=0;
 			}else {
-				sum = sum + member[i];
-				if (sum>=3 || sum>=4) {
+				if (sum==3) {
 					car++;
 					sum = 0;
+				}else {
+					
 				}
 			}
 		}
-		if (sum>0) {
-			System.out.println(car+1);
-		}else {
-			System.out.println(car);
-		}
+		System.out.println(car);
 		
 	}
 
