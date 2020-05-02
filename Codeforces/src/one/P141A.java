@@ -1,8 +1,6 @@
 package one;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashSet;
 import java.util.Scanner;
 
 /*
@@ -16,24 +14,28 @@ public class P141A {
 		String x = mScanner.nextLine();
 		String y = mScanner.nextLine();
 		String z = mScanner.nextLine();
-		char[] xx = x.toCharArray();
-		char[] yy = y.toCharArray();
-		char[] zz = z.toCharArray();
-		Arrays.sort(xx);
-		Arrays.sort(yy);
-		Arrays.sort(zz);
-		HashSet<Character> mSet = new HashSet<Character>();
-		for (Character c : zz) {
-			mSet.add(c);
+		String sum = x+y+z;
+		char[] all = sum.toCharArray();
+		Arrays.sort(all);
+		int[] Count = new int[256];
+		for (int i = 0; i < all.length; i++) {
+			int sambol = all[i];
+			Count[sambol]=Count[sambol]+1;
 		}
-		for (Character c : yy) {
-			if (mSet.contains(c)) {
-				mSet.remove(c);
-			}else {
-				mSet.add(c);
+		for (int i = 0; i < Count.length; i++) {
+			if (Count[i]%2==0) {
+				Count[i] = 0;
 			}
 		}
-		System.out.println(mSet);
+		String add = "";
+		for (int i = 0; i < Count.length; i++) {
+			add+=Count[i];
+		}
+		add= add.replaceAll("0", "");
+		if (add.length()>0) {
+			System.out.println("NO");
+		}else {
+			System.out.println("YES");
+		}
 	}
-
 }
