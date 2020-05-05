@@ -7,7 +7,6 @@ import java.util.Scanner;
  * @author Tanzim Ibn Patowary
  * Created  May 5, 2020 10:22:35 PM
  */
-//uxxxxxlmexxxxxxxwnxxexxxxxcxxfydxxxxxxvmdxxxxxxisxxxxxxxxidkxxxpxxxxxxxxmnuxxxxjxxxqcxxwmxxxxxxxxmrx
 public class P978B {
 
 	public static void main(String[] args) {
